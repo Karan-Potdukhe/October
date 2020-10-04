@@ -1,0 +1,34 @@
+XML documents have syntactic and semantic structures. The syntax (think spelling and punctuation) is made up of a minimum of rules:
+
+XML documents always have one and only one root element - The structure of an XML document is a tree structure where there is one trunk and optionally many branches. The single trunk represents the root element of the XML document.
+Element names are case-sensitive - Each of the following possible elements names are different: name, Name, NAME, nAmE.
+Elements are always closed - Each element is denoted by opening and closing brackets, the less than sign (<) and greater than sign (>), respectively.
+Elements must be correctly nested - Consecutive XML elements may not be opened and then closed without closing the elements that were opened last first.
+Elements' attributes must always be quoted - XML element are often qualified using attributes. For example, an integer might be marked up as a length and the length element might be qualified to denote feet as the unit of measure. For example: <length unit='meter'>5</length>. The attribute is named unit, and it's value is always quoted. It does not matter whether or not it is quoted with an apostrophe (') or a double quote (").
+There are only five entities defined by default (&lt;, &gt;, &amp;, &quot;, and &apos;) - Certain characters in XML documents have special significance, specifically, the less than (<), greater than (>), and ampersand (&) characters. The first two characters are used to delimit the existence of element names. The ampersand is used to delimit the display of special characters commonly known as entities; the ampersand character is the "escape" character. Because ' and " are used in attributes they have pre-defined entities as well.
+When necessary, namespaces must be employed to eliminate vocabulary clashes - The concept of a "namespace" is used to avoid conflicts of XML elements between DTDs and XML schemas.
+The following simple XML document illustrates many of these rules:
+<pets>
+  <pet>
+   <name>Jack</name>
+   <age unit='years'>3</age>
+   <type>cat</type>
+   <color>black</color>
+  </pet>
+  <pet>
+   <name>Toby &quot;The Terror&quot;</name>
+   <age unit='years'>10</age>
+   <type>dog</type>
+   <color>brown</color>
+  </pet>
+  <pet>
+   <name>Sugar &amp; Spice</name>
+   <age unit='years'>3</age>
+   <type>guinea pig</type>
+   <color>white and brown</color>
+  </pet>
+</pets>
+The semantics of an XML document (think grammar) is an articulation of what XML elements can exist in a file, their relationship(s) to each other, and their meaning. Ironically, this is the really hard part about XML and has manifested itself as a multitude of XML "languages" such as: RSS, RDF, TEI, DocBook, XMLMARC, EAD, XSL, etc.
+
+XML information is made accessible to humans as well as computers through an XML-based technology called XSLT (eXtensible Stylesheet Language: Transformation). XSLT is an XML "language". Write/create an XML file. Write an XSLT file. Use a computer program to combine the two to make a third file -- the transformation. The third file can be any plain text file including another XML file, a narrative text, or even a set of sophisticated commands such as structured query language (SQL) queries intended to be applied against a relational database application. Again, XSLT is a programming language. It is complete with input parameters, conditional processing, and function calls. Unlike most programming languages, XSLT is declarative and not procedural. This means parts of the computer program are executed as particular characteristics of the data are met and less in a linear top to bottom fashion. 
+This also means it is not possible to change the value of variables once they have been defined.
